@@ -47,35 +47,10 @@ header {
   border-radius: 6px;
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar ul li { display: inline-block; }
-
-.navbar a {
-  color: var(--light);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s, transform 0.2s;
-}
-
-.navbar a:hover {
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
 .logo:hover { color: var(--accent); }
 .logo img:hover { transform: rotate(-5deg) scale(1.05); transition: transform 0.3s ease; }
 
-@media (max-width: 768px) {
-  .navbar { flex-direction: column; align-items: flex-start; padding: 15px 20px; }
-  .navbar ul { flex-direction: column; gap: 15px; margin-top: 10px; }
-}
+
 
 /* -------------------------
    Hero
