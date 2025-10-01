@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Topflippa's Tech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="fade-in">
+    <nav class="navbar">
+      <a href="index.html" class="logo fade-in">
+        <img src="logo.JPG" alt="Logo">
+        <span>Top Flippa's Tech Hub</span>
+      </a>
+
+     <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+
+      <ul>
+        <li><a href="index.html" class="fade-in">Home</a></li>
+        <li><a href="about.html" class="fade-in">About Us</a></li>
+        <li><a href="services.html" class="fade-in">Our Services</a></li>
+        <li><a href="portfolio.html" class="fade-in">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero fade-in">
+    <div class="hero-text fade-in">
+      <h1>My Portfolio</h1>
+      <p>Explore the projects I have developed, designed, and delivered to help businesses and individuals grow digitally.</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+<section class="projects fade-in" id="projects">
+  <h2 class="fade-in">Our Projects</h2>
+  <p class="fade-in"><em>Explore our range of projects and services designed to elevate your digital presence.</em></p>
+
+  <!-- Filter Buttons -->
+  <div class="project-filters fade-in">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="web">Web</button>
+    <button class="filter-btn" data-filter="uiux">UI/UX</button>
+    <button class="filter-btn" data-filter="mobile">Mobile</button>
+    <button class="filter-btn" data-filter="ai">AI</button>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="project-cards">
+    <div class="project-card fade-in" data-category="web">
+      <img src="design4web.avif" alt="Portfolio Website" class="project-img">
+      <i class="fas fa-laptop-code"></i>
+      <h3>Portfolio Website</h3>
+      <p>A modern personal portfolio built with HTML & CSS to showcase my expertise.</p>
+      <a href="https://charles-hub.vercel.app" class="btn-project">View Project</a>
+    </div>
+
+    <div class="project-card fade-in" data-category="web">
+      <img src="hotellp.avif" alt="Hotel Landing Page" class="project-img">
+      <i class="fas fa-hotel"></i>
+      <h3>Hotel Landing Page</h3>
+      <p>A clean hotel booking landing page with room listings and contact form.</p>
+      <a href="https://hotel-landing-page-jet.vercel.app" class="btn-project">View Project</a>
+    </div>
+
+    <div class="project-card fade-in" data-category="web">
+      <img src="cart.avif" alt="E-commerce Store" class="project-img">
+      <i class="fas fa-shopping-cart"></i>
+      <h3>E-commerce Store</h3>
+      <p>A responsive online boutique with product catalog and checkout features.</p>
+      <a href="https://hotel-landing-page-jet.vercel.app" class="btn-project">View Project</a>
+    </div>
+
+    <div class="project-card fade-in" data-category="uiux">
+      <img src="webservice.jpg" alt="Blog Platform" class="project-img">
+      <i class="fas fa-blog"></i>
+      <h3>Blog Platform</h3>
+      <p>A stylish blog layout with categories, articles, and easy navigation.</p>
+      <a href="https://charles-hub.vercel.app" class="btn-project">View Project</a>
+    </div>
+
+    <div class="project-card fade-in" data-category="web">
+      <img src="webdev.avif" alt="Tech Hub Landing Page" class="project-img">
+      <i class="fas fa-network-wired"></i>
+      <h3>Tech Hub Landing Page</h3>
+      <p>A modern landing page for a tech hub with sections for services and events.</p>
+      <a href="https://charles-hub.vercel.app" class="btn-project">View Project</a>
+    </div>
+
+    <div class="project-card fade-in" data-category="ai">
+      <img src="ai.jpg" alt="AI Chatbot UI" class="project-img">
+      <i class="fas fa-robot"></i>
+      <h3>AI Chatbot UI</h3>
+      <p>An interactive chatbot front-end interface with a clean and simple design.</p>
+      <a href="#" class="btn-project">View Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- Filter Script -->
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+const projects = document.querySelectorAll('.project-card');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove active class from all buttons
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    const filter = button.getAttribute('data-filter');
+
+    projects.forEach(project => {
+      if (filter === 'all' || project.getAttribute('data-category') === filter) {
+        project.classList.remove('hide');
+      } else {
+        project.classList.add('hide');
+      }
+    });
+  });
+});
+
+</script>
+
+ <!-- Contact Card Section -->
+  <section class="contact fade-in">
+    <h2>Get In Touch</h2>
+    <div class="contact-card fade-in">
+      <p>Have a project or idea? Let's collaborate and bring it to life!</p>
+      <ul>
+        <li><i class="fas fa-envelope"></i> kleins001@icloud.com</li>
+        <li><i class="fas fa-phone"></i> +234 9060071115</li>
+        <li><i class="fas fa-map-marker-alt"></i>Cafe one Enugu, 22 Okpara Avenue, Achara CCB Building.</li>
+      </ul>
+      <a href="mailto:kleins001@icloud.com" class="btn fade-in"><i class="fas fa-paper-plane"></i> Send Message</a>
+      <div class="newsletter-socials fade-in">
+        <a href="https://instagram.com/Flipitlikecharles" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/nneji-charles-49567536b" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/charlie2xl" target="_blank" class="github"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </section>
+
+ <section class="testimonials fade-in">
+  <h2 class="fade-in">What Clients Say</h2>
+  <div class="testimonial-track fade-in">
+    <div class="testimonial-card fade-in">
+      <div class="client-img">
+        <img src="clreview.avif" alt="Client 1">
+      </div>
+      <h3>Payne Dough</h3>
+      <span>CEO, Startup Co.</span>
+      <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </div>
+      <p>"Absolutely amazing! My website looks stunning and functions perfectly. Highly recommended!"</p>
+    </div>
+
+    <div class="testimonial-card fade-in">
+      <div class="client-img">
+        <img src="clreviw.avif" alt="Client 2">
+      </div>
+      <h3>Michael Smith</h3>
+      <span>Marketing Manager</span>
+      <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <p>"Professional, creative, and responsive. They delivered above expectations!"</p>
+    </div>
+
+    <div class="testimonial-card fade-in">
+      <div class="client-img">
+        <img src="clireviw.avif" alt="Client 3">
+      </div>
+      <h3>kalvin</h3>
+      <span>Entrepreneur</span>
+      <div class="stars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </div>
+      <p>"Incredible attention to detail! My project was completed on time with outstanding quality."</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="fade-in">
+    p>© 2025 Topflippa's Tech. Built with  HTML, CSS & JavaScript. All rights </p>
+  </footer>
+  </footer>
+
+  <!-- Scroll fade-in JS -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+
+  <script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>
