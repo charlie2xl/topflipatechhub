@@ -1127,25 +1127,33 @@ a {
   border-radius: 2px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex; /* show hamburger */
-  }
+/* Default desktop nav */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
 
+/* MOBILE */
+@media (max-width: 768px) {
   .nav-links {
-    display: none; /* hide links by default */
+    display: none; /* hide menu by default */
     flex-direction: column;
-    gap: 8px;
-    background: #4c4f52;
+    gap: 15px;
+    background: #0077cc;
     position: absolute;
     top: 60px;
     right: 20px;
     padding: 20px;
     border-radius: 10px;
+    width: 200px;
   }
 
   .nav-links.active {
-    display: flex; /* show when active */
+    display: flex; /* show menu when toggled */
+  }
+
+  .hamburger {
+    display: flex; /* only show hamburger on small screens */
   }
 }
