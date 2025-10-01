@@ -1063,68 +1063,6 @@ a {
   color: #ffdd00;
 }
 
-/* Hamburger */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #fff;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Responsive */
-@media screen and (max-width: 1024px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #0d47a1;
-    width: 100%;
-    flex-direction: column;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.4s ease;
-  }
-
-  .nav-links li {
-    text-align: center;
-    padding: 15px 0;
-  }
-
-  .nav-links.active {
-    max-height: 500px; /* adjust for number of links */
-  }
-}
-
-/* Hamburger animation when clicked */
-.hamburger.toggle span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.toggle span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.toggle span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-section {
-  padding: 80px 20px;  /* consistent spacing */
-}
-@media (max-width: 768px) {
-  section {
-    padding: 60px 15px;
-  }
-}
 .hero, .about-section, .services-hero {
   padding: 100px 20px;
 }
