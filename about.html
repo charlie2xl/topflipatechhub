@@ -178,7 +178,19 @@
       appearOnScroll.observe(fader);
     });
   </script>
-  <script src="script.js"></script>
 
+  <!-- Hamburger Toggle JS -->
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector("#nav-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      // accessibility toggle
+      const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", !isExpanded);
+    });
+  </script>
 </body>
 </html>
+

@@ -212,19 +212,39 @@
   </footer>
   </footer>
 
-  <!-- Scroll fade-in JS -->
+ <!-- Scroll fade-in JS -->
   <script>
     const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('show');
         observer.unobserve(entry.target);
       });
     }, appearOptions);
-    faders.forEach(fader => { appearOnScroll.observe(fader); });
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
   </script>
-<script src="script.js"></script>
+
+  <!-- Hamburger Toggle JS -->
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector("#nav-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      // accessibility toggle
+      const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", !isExpanded);
+    });
+  </script>
 </body>
 </html>
