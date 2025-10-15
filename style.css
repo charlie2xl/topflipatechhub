@@ -527,3 +527,75 @@ footer {
   background: #111;
   color: #fff;
 }
+/* Contact Form Layout */
+.contact-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 450px; /* 👈 limits width on large screens */
+  margin-inline: auto; /* centers horizontally */
+}
+
+/* Input and Textarea */
+.contact-card input,
+.contact-card textarea {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+}
+
+/* Button */
+.contact-card button {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-card button:hover {
+  background: var(--secondary);
+}
+
+/* Status Text */
+#formStatus {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-align: center;
+}
+
+/* 📱 Mobile responsiveness */
+@media (max-width: 600px) {
+  .contact-card form {
+    max-width: 95%;
+  }
+
+  .contact-card input,
+  .contact-card textarea {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .contact-card button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}

@@ -123,7 +123,16 @@
         <li><i class="fas fa-phone"></i> +234 9060071115</li>
         <li><i class="fas fa-map-marker-alt"></i>Cafe one Enugu, 22 Okpara Avenue, Achara CCB Building.</li>
       </ul>
-      <a href="mailto:kleins001@icloud.com" class="btn fade-in"><i class="fas fa-paper-plane"></i> Send Message</a>
+      <form id="contactForm">
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit" class="btn fade-in">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+      <p id="formStatus" class="fade-in"></p>
+    </form>
+
       <div class="newsletter-socials fade-in">
         <a href="https://instagram.com/Flipitlikecharles" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://linkedin.com/in/nneji-charles-49567536b" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
@@ -219,6 +228,37 @@
       hamburger.setAttribute("aria-expanded", !isExpanded);
     });
   </script>
+  <script>
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const formStatus = document.getElementById("formStatus");
+  formStatus.textContent = "Sending message...";
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  try {
+    const response = await fetch("http://localhost:5000/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message })
+    });
+
+    if (response.ok) {
+      formStatus.textContent = "✅ Message sent successfully!";
+      document.getElementById("contactForm").reset();
+    } else {
+      formStatus.textContent = "❌ Failed to send message. Try again later.";
+    }
+  } catch (error) {
+    console.error(error);
+    formStatus.textContent = "⚠️ Network error. Please try again.";
+  }
+});
+</script>
+
 </body>
 </html>
 
